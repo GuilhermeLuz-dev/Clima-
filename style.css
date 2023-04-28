@@ -10,12 +10,14 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 1s;
+    background: linear-gradient(90deg,#73A8F1,30%,#092040);
 }
-
+ /* Container campo de pesquisa */
 #container_form{
     background: linear-gradient(90deg,#2259a7, #5293EF);
     height: 10vh;
-    width: 25vw;
+    width: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,23 +28,26 @@ body{
 
 #container_form input{
     height: 5vh;
-    width: 18vw;
+    width: 250px;
     border: none;
     padding: 10px;
     margin-right:10px;
     border-radius: 15px;
 }
 #container_form button{
-    height: 5vh;
-    width: 5vh;
+    height: 30px;
+    width: 30px;
     border: none;
     border-radius: 50%;
+    cursor: pointer;
 }
-
-
+#container_form button:hover{
+    background-color: rgb(192, 188, 188);
+}
+ /* Container do clima */
 #container_clima{
     background: linear-gradient(90deg,#2259a7, #5293EF);
-    width: 25vw;
+    width: 350px;
     height: 60vh;
     margin-top: 5vh;
     border-radius: 15px;
@@ -50,29 +55,30 @@ body{
     color: aliceblue;
     padding: 20px;
     position: relative;
+    opacity: 0;
 }
-#local h1{
+#region h1{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    width:20vw;
+    width:300px;
     justify-content: space-between;
     align-items: center;
     margin-top: 2vh;
 }
-#local h1 span{
+#region h1 span{
     font-size: 45px;
 }
 .container_info{
     position: absolute;
-    width:20vw;
+    width:300px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-top: 20vh;
+    margin-top: 15vh;
     align-items: center;
 }
 
@@ -83,8 +89,7 @@ body{
     margin-bottom: 5vh;
 }
 #desc_clima img{
-    width: 85px;
-    
+    width: 100px;
 }
 #info_clima{
     display: flex;
@@ -103,6 +108,22 @@ body{
 .info i{
     margin-right: 5px;
 }
-.sumir{
+.some{
     display: none;
+}
+
+/* Animações */
+.appear{
+    animation: appear 1s  forwards;
+}
+.vanish{
+    animation: vanish 1s  forwards;
+}
+@keyframes appear{
+    0%{transform: translateX(-70%); opacity: 0;}
+    100%{transform: translateX(0%); opacity: 1;}
+}
+@keyframes vanish {
+    0%{transform: translateX(0%); opacity: 1;}
+    100%{transform: translateX(70%);opacity: 0;}
 }
