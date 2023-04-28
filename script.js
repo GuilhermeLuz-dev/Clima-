@@ -32,6 +32,7 @@ const showWeather = async (city) => {
     }
 
     const data = await getWeatherData(city)
+    favicon.setAttribute('href', `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
     region.innerText = data.name;
     flag.setAttribute('src', `https://flagsapi.com/${data.sys.country}/flat/64.png`);
     desc_img.setAttribute('src', `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
